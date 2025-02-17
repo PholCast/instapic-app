@@ -2,6 +2,31 @@
 
 # Guía sobre Estilos en CSS
 
+## `display: flex`
+
+`display: flex` es una propiedad de CSS que convierte un contenedor en un **contenedor flexible**, permitiendo organizar los elementos internos de forma eficiente.
+
+### **Propiedades principales**
+- `flex-direction`: Define la dirección de los elementos (`row`, `column`, etc.).
+- `justify-content`: Controla la alineación horizontal.
+- `align-items`: Controla la alineación vertical.
+- `flex-wrap`: Permite que los elementos se ajusten en varias líneas.
+- `gap`: Define el espacio entre los elementos.
+
+### **Ejemplo**
+```css
+.container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+```
+Esto centra los elementos horizontal y verticalmente dentro de `.container`.
+
+---
+
 ## 1. `body` (Estilos generales)
 ```css
 body {
