@@ -2,115 +2,182 @@
 
 # Guía sobre Estilos en CSS
 
-CSS (Cascading Style Sheets) es un lenguaje de estilos utilizado para definir la presentación de documentos HTML. En esta guía, exploraremos las diferentes formas de aplicar estilos en CSS y cómo seleccionar elementos para personalizarlos.
-
-## 1. Formas de Aplicar Estilos en CSS
-
-### a) Uso del Atributo `style` en las Etiquetas HTML
-Se pueden aplicar estilos directamente en los elementos HTML utilizando el atributo `style`. Sin embargo, esta práctica no es recomendada para proyectos grandes debido a la dificultad de mantenimiento.
-
-```html
-<p style="color: blue; font-size: 16px;">Este es un párrafo con estilos en línea.</p>
-```
-
-### b) Uso de la Etiqueta `<style>` en el Documento HTML
-Otra forma de aplicar estilos es incluirlos dentro de una etiqueta `<style>` en la sección `<head>` del documento HTML.
-
-```html
-<head>
-    <style>
-        p {
-            color: green;
-            font-size: 18px;
-        }
-    </style>
-</head>
-<body>
-    <p>Este es un párrafo con estilos definidos en la sección `<style>`.</p>
-</body>
-```
-
-### c) Uso de un Archivo CSS Externo
-La forma más recomendada para proyectos grandes es definir los estilos en un archivo CSS separado y vincularlo al documento HTML con la etiqueta `<link>`.
-
-**Archivo `styles.css`**:
+## 1. `body` (Estilos generales)
 ```css
-p {
-    color: red;
-    font-size: 20px;
+body {
+    font-family: 'Ubuntu', 'Courier New', Courier, monospace;
+    color: #023047;
+    background-color: #f1f1f1;
+    margin: 0px;
+    padding: 0px;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
 }
 ```
-
-**Archivo `index.html`**:
-```html
-<head>
-    <link rel="stylesheet" href="styles.css">
-</head>
-<body>
-    <p>Este es un párrafo con estilos definidos en un archivo externo.</p>
-</body>
-```
+- Define la fuente del texto con una prioridad (primero *Ubuntu*, si no está disponible, *Courier New*, y así sucesivamente).
+- Color del texto: `#023047` (un tono azul oscuro).
+- Fondo de la página: `#f1f1f1` (gris claro).
+- Elimina los márgenes y el padding por defecto.
+- Usa `display: flex` para organizar los elementos en columna.
+- `min-height: 100vh;` asegura que el `body` tenga al menos la altura completa de la pantalla.
 
 ---
 
-## 2. Formas de Seleccionar Elementos en CSS
-
-### a) Selección Directa por Etiqueta
-Se aplican estilos a todas las etiquetas de un tipo específico.
+## 2. `header` (Encabezado)
 ```css
-h1 {
-    color: blue;
+header {
+    background-color: #219ebc;
+    color: white;
+    padding: 20px;
     text-align: center;
 }
 ```
-
-### b) Selección por ID
-Se usa `#` seguido del ID del elemento. Debe ser único por página.
-```css
-#titulo-principal {
-    font-size: 24px;
-    color: purple;
-}
-```
-```html
-<h1 id="titulo-principal">Este es un título con un ID.</h1>
-```
-
-### c) Selección por Clase
-Se usa `.` seguido del nombre de la clase. Puede aplicarse a múltiples elementos.
-```css
-.destacado {
-    font-weight: bold;
-    background-color: yellow;
-}
-```
-```html
-<p class="destacado">Este es un párrafo destacado.</p>
-```
-
-### d) Selección por Atributo
-Se pueden aplicar estilos a elementos que contengan un atributo específico.
-```css
-input[type="text"] {
-    border: 2px solid gray;
-    padding: 5px;
-}
-```
-```html
-<input type="text" placeholder="Ingrese su nombre">
-```
-
-### e) Selección por Nombre
-Aunque no es común, se pueden seleccionar elementos con `name` usando el selector de atributos.
-```css
-[name="usuario"] {
-    background-color: lightblue;
-}
-```
-```html
-<input type="text" name="usuario" placeholder="Usuario">
-```
+- Fondo azul (`#219ebc`).
+- Texto en color blanco.
+- Espaciado interno de `20px`.
+- Alineación centrada del contenido.
 
 ---
 
+## 3. `main` (Sección principal)
+```css
+main {
+    flex: 1;
+    padding: 10px 20px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+```
+- `flex: 1;` permite que ocupe el espacio disponible entre el `header` y el `footer`.
+- `padding: 10px 20px;` agrega margen interno.
+- `width: 100%;` asegura que ocupe todo el ancho disponible.
+- Usa `display: flex` para organizar los elementos en columna y centrarlos.
 
+---
+
+## 4. `#login-box` (Caja del formulario de login)
+```css
+#login-box {
+    background-color: #FFF;
+    padding: 20px 40px;
+    max-width: 400px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+}
+```
+- Fondo blanco.
+- Espaciado interno `20px 40px`.
+- Ancho máximo de `400px`.
+- Bordes redondeados (`border-radius: 10px`).
+- Sombra ligera (`box-shadow`).
+- Se centra horizontalmente (`margin: 0 auto`).
+- Organiza su contenido en columna (`display: flex; flex-direction: column;`).
+
+### **Título del login**
+```css
+#login-box h2 {
+    text-align: center;
+    margin-bottom: 10px;
+}
+```
+- Centra el texto del título `<h2>`.
+- Agrega un pequeño espacio inferior.
+
+---
+
+## 5. Estilos de los `input` (Campos de texto y contraseña)
+```css
+input[type="text"], input[type="password"] {
+    background-color: #FFF;
+    border: 2px solid #219ebc;
+    color: #023047;
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 5px;
+    width: 100%;
+    box-sizing: border-box;
+    margin-bottom: 20px;
+}
+```
+- Bordes `2px` de color azul (`#219ebc`).
+- Color del texto azul oscuro (`#023047`).
+- `width: 100%` asegura que ocupe todo el ancho disponible.
+- `border-radius: 5px;` para bordes redondeados.
+- `box-sizing: border-box;` evita que el `padding` afecte el ancho.
+
+### **Efecto cuando están enfocados (`focus`)**
+```css
+input[type="text"]:focus, input[type="password"]:focus {
+    border-color: #fb8500;
+    outline: none;
+}
+```
+- Cuando se selecciona el campo, cambia el borde a naranja (`#fb8500`).
+- Elimina el contorno predeterminado (`outline: none;`).
+
+---
+
+## 6. Menú de navegación en el `header`
+```css
+header > ul {
+    display: flex;
+}
+```
+- Usa `display: flex` para organizar los elementos en fila.
+
+```css
+header > ul li {
+    list-style: none;
+    margin: auto;
+}
+```
+- Quita los estilos de lista.
+- Centra los elementos con `margin: auto`.
+
+```css
+header > ul li a {
+    text-decoration: none;
+    cursor: pointer;
+    color: #FFF;
+    font-weight: bolder;
+    font-size: 18px;
+}
+```
+- Enlaces sin subrayado.
+- Color blanco.
+- Texto en negrita y tamaño `18px`.
+
+---
+
+## 7. `footer` (Pie de página)
+```css
+footer {
+    display: flex;
+    padding: 20px;
+    justify-content: center;
+    background-color: #023047;
+    color: #FFF;
+}
+```
+- Se alinea el contenido al centro (`justify-content: center`).
+- Fondo azul oscuro (`#023047`).
+- Texto en color blanco.
+
+### **Iconos en el `footer`**
+```css
+footer i {
+    margin-left: 20px;
+    margin-right: 20px;
+    font-size: 30px;
+}
+```
+- Agrega separación entre iconos (`margin-left: 20px; margin-right: 20px;`).
+- Tamaño del icono `30px`.
+
+---
