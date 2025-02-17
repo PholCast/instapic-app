@@ -25,6 +25,101 @@
 ```
 Esto centra los elementos horizontal y verticalmente dentro de `.container`.
 
+# Propiedades de Flexbox en CSS
+
+## 1. `flex-direction`
+Esta propiedad define la dirección en la que se colocan los elementos dentro de un contenedor flex.
+
+### Valores posibles:
+- `row` (por defecto): Los elementos se colocan en una fila de izquierda a derecha.
+- `row-reverse`: Los elementos se colocan en una fila de derecha a izquierda.
+- `column`: Los elementos se colocan en una columna de arriba hacia abajo.
+- `column-reverse`: Los elementos se colocan en una columna de abajo hacia arriba.
+
+### Ejemplo:
+```css
+.container {
+    display: flex;
+    flex-direction: column;
+}
+```
+
+---
+
+## 2. `justify-content`
+Esta propiedad controla la alineación horizontal de los elementos flexibles dentro de su contenedor.
+
+### Valores posibles:
+- `flex-start` (por defecto): Alinea los elementos al inicio.
+- `flex-end`: Alinea los elementos al final.
+- `center`: Centra los elementos en el contenedor.
+- `space-between`: Distribuye los elementos con el máximo espacio entre ellos.
+- `space-around`: Distribuye los elementos con espacio alrededor de cada uno.
+- `space-evenly`: Distribuye los elementos con espacio igual entre ellos.
+
+### Ejemplo:
+```css
+.container {
+    display: flex;
+    justify-content: space-between;
+}
+```
+
+---
+
+## 3. `align-items`
+Esta propiedad controla la alineación vertical de los elementos flexibles dentro del contenedor.
+
+### Valores posibles:
+- `stretch` (por defecto): Los elementos se estiran para llenar el contenedor.
+- `flex-start`: Alinea los elementos en la parte superior.
+- `flex-end`: Alinea los elementos en la parte inferior.
+- `center`: Centra los elementos verticalmente.
+- `baseline`: Alinea los elementos según la línea base del texto.
+
+### Ejemplo:
+```css
+.container {
+    display: flex;
+    align-items: center;
+}
+```
+
+---
+
+## 4. `flex-wrap`
+Determina si los elementos flexibles deben ajustarse a una nueva línea cuando el espacio es insuficiente.
+
+### Valores posibles:
+- `nowrap` (por defecto): Los elementos se mantienen en una sola línea.
+- `wrap`: Los elementos se ajustan a nuevas líneas si es necesario.
+- `wrap-reverse`: Igual que `wrap`, pero en orden inverso.
+
+### Ejemplo:
+```css
+.container {
+    display: flex;
+    flex-wrap: wrap;
+}
+```
+
+---
+
+## 5. `gap`
+Define el espacio entre los elementos flexibles dentro del contenedor.
+
+### Valores posibles:
+- Un solo valor: Define un espacio uniforme en ambas direcciones.
+- Dos valores: El primer valor define el espacio entre filas y el segundo entre columnas.
+
+### Ejemplo:
+```css
+.container {
+    display: flex;
+    gap: 20px;
+}
+```
+
 ---
 
 ## 1. `body` (Estilos generales)
