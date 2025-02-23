@@ -22,9 +22,16 @@ main{
     width: 100%;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: center; /*change*/
+    align-items: center;
 }
+.main-home{
+    justify-content: flex-start;
+} 
 
+/*main:not(.main-home){
+    justify-content: center;
+}*/
 #login-box{
     background-color: #FFF;
     padding: 20px 40px;
@@ -118,4 +125,43 @@ footer i{
     margin-left: 20px;
     margin-right: 20px;
     font-size: 30px;
+}
+
+#profile{ 
+background-color: rgb(255, 255, 255); 
+display: flex; 
+width: 70%; 
+align-items: center; 
+justify-content: space-evenly; 
+text-align: center;
+padding: 20px;
+border-radius: 15px;
+}
+
+#profile img{
+    width: 90px ;
+    border-radius: 45px;
+}
+
+#gallery{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 20px;
+}
+
+#gallery img{
+    width: 300px;
+    margin: 20px;
+    filter: grayscale(100%);
+    transition: transform 0.5s ease;
+}
+
+
+#gallery img:hover{
+    border:1px outset #d00000 ;
+    border-radius: 10px;
+    filter: grayscale(0);
+    transform: scale(1.2); 
+
 }
