@@ -29,22 +29,22 @@
         <li><a href="index.html">Cerrar sesión</a></li>
       </ul>
     </header>
-    <main class="main-home">
+    <main>
       <section id="profile">
         <div>
-         <div><img src="../assets/batman_avatar.webp" /></div>
-          <div id="userName">Juan Pérez</div>
+          <img src="../assets/batman_avatar.webp" />
+          <span id="username">Juan Pérez</span>
         </div>
         <div>
-          <span>10</span><br>
+          <span>10</span>
           <span>Publicaciones</span>
         </div>
         <div>
-          <span>5</span><br>
+          <span>5</span>
           <span>Seguidores</span>
         </div>
         <div>
-          <span>250</span><br>
+          <span>250</span>
           <span>Solicitudes</span>
         </div>
       </section>
@@ -67,5 +67,22 @@
       <i class="fa-brands fa-x-twitter"></i>
       <i class="fa-brands fa-facebook"></i>
     </footer>
+    <script>
+      // Función para obtener el valor de un parámetro en la query string
+      function getQueryParam(param) {
+          const urlParams = new URLSearchParams(window.location.search);
+          return urlParams.get(param);
+      }
+
+      // Recupera el userName de la URL
+      const username = getQueryParam('username');
+
+      // Si el userName está disponible, lo muestra en la página
+      if (username) {
+          document.getElementById('username').textContent = `${username}!`;
+      } else {
+          document.getElementById('username').textContent = 'Bienvenido!';
+      }
+  </script>
   </body>
 </html>

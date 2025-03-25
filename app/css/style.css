@@ -22,16 +22,9 @@ main{
     width: 100%;
     display: flex;
     flex-direction: column;
-    justify-content: center; /*change*/
-    align-items: center;
-}
-.main-home{
-    justify-content: flex-start;
-} 
-
-/*main:not(.main-home){
     justify-content: center;
-}*/
+}
+
 #login-box{
     background-color: #FFF;
     padding: 20px 40px;
@@ -127,20 +120,30 @@ footer i{
     font-size: 30px;
 }
 
-#profile{ 
-background-color: rgb(255, 255, 255); 
-display: flex; 
-width: 70%; 
-align-items: center; 
-justify-content: space-evenly; 
-text-align: center;
-padding: 20px;
-border-radius: 15px;
+#profile{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    width: 80%;
 }
 
 #profile img{
-    width: 90px ;
-    border-radius: 45px;
+    width: 100px;
+    display: block;
+    border-radius: 50px;
+}
+
+#profile div{
+    text-align: center;
+}
+
+#profile div span{
+    display: block;
+}
+
+#profile div span:first-child{
+    font-size: 1.8em;
+    font-weight: 900;
 }
 
 #gallery{
@@ -153,15 +156,11 @@ border-radius: 15px;
 #gallery img{
     width: 300px;
     margin: 20px;
-    filter: grayscale(100%);
-    transition: transform 0.5s ease;
+    padding: 5px;
+    border: 1px solid #fff;
 }
 
-
 #gallery img:hover{
-    border:1px outset #d00000 ;
-    border-radius: 10px;
-    filter: grayscale(0);
-    transform: scale(1.2); 
-
+    border-color:#fb8500;
+    opacity: 0.7;
 }
